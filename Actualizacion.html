@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actualizar DonVotex</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px;
+    }
+
+    h1 {
+      color: #00d9ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    #descargarBtn {
+      background-color: #00d9ff;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #descargarBtn:hover {
+      background-color: #00b3cc;
+    }
+
+    #barraCarga {
+      margin-top: 25px;
+      width: 100%;
+      max-width: 400px;
+      height: 15px;
+      background-color: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      display: none;
+    }
+
+    #progreso {
+      height: 100%;
+      width: 0%;
+      background-color: #00d9ff;
+      animation: cargar 2s linear forwards;
+    }
+
+    @keyframes cargar {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Actualizar DonVotex</h1>
+  <p>Haz clic en el botón para descargar la versión 2.0</p>
+
+  <button id="descargarBtn" onclick="descargar()">⬇ Descargar v2.0</button>
+
+  <div id="barraCarga">
+    <div id="progreso"></div>
+  </div>
+
+  <script>
+    function descargar() {
+      // Mostrar barra de carga
+      document.getElementById("barraCarga").style.display = "block";
+
+      // Espera 2 segundos para animación y luego descarga
+      setTimeout(function () {
+        const url = "https://drive.google.com/uc?export=download&id=1vL38S91gxs3N-rHjigXAqpGN6DliAm7i";
+        window.open(url, "_blank");
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
